@@ -33,8 +33,69 @@ scale=1.0">
     </header>
     <!--Seção banner 1 é a parte do paragrafo 1 da página-->
 <section class="banner1">
-    <img class="escola.image" src="paragrafo_1_banner.jpg" alt="Banner da Escola">
+        <img class="escola.image" src="paragrafo_1_banner.jpg" alt="Banner da Escola">
+        
+        <div class="ler-mais-container">
+            <h2 style="text-align: center; margin-top: 20px;">Sobre Nossa Escola</h2>
+            <p id="texto-introducao">
+                Nossa escola é um lugar de inovação e aprendizado. Desde a sua fundação,
+                temos o compromisso de oferecer uma educação de qualidade, focada no
+                desenvolvimento integral dos alunos. Valorizamos a curiosidade, o pensamento
+                crítico e a colaboração entre todos. Trabalhamos para que cada aluno se sinta
+                motivado a alcançar seu potencial máximo.
+                <span id="texto-escondido" style="display: none;">
+                    Além disso, oferecemos um vasto leque de atividades extracurriculares, incluindo
+                    clubes de robótica, aulas de música e esportes variados. Nosso corpo docente é
+                    altamente qualificado e utiliza metodologias modernas para engajar os estudantes.
+                    Acreditamos que a parceria entre escola, aluno e família é a chave para o sucesso
+                    educacional. Juntos, construímos o futuro!
+                </span>
+            </p>
+            <button id="btn-ler-mais" class="btn-ler-mais">Ler Mais</button>
+        </div>
     </section>
+    ```
+
+### 2. Adição do JavaScript (No seu `script.js`)
+
+Adicione o código abaixo ao final do seu arquivo **`script.js`**. Se você já tinha o código do menu/destaque, apenas cole este novo bloco abaixo dele.
+
+#### `script.js` (Bloco "Ler Mais Simples")
+
+```javascript
+// =========================================================
+// EXEMPLO 3: LER MAIS SIMPLES
+// =========================================================
+
+// 1. Encontra os três elementos que vamos manipular no HTML
+const botaoLerMais = document.getElementById('btn-ler-mais');
+const textoEscondido = document.getElementById('texto-escondido');
+const textoIntroducao = document.getElementById('texto-introducao'); // O parágrafo completo
+
+// 2. Cria a função que será executada ao clicar no botão
+function toggleTexto() {
+    // Verifica qual é o estado atual do texto escondido
+    
+    // Se o texto escondido estiver oculto (display: none no HTML)
+    if (textoEscondido.style.display === 'none') {
+        // 3. Mostra o texto
+        textoEscondido.style.display = 'inline'; // ou 'block', mas 'inline' fica melhor para texto corrido
+        
+        // 4. Muda o texto do botão para "Ler Menos"
+        botaoLerMais.textContent = 'Ler Menos';
+        
+    } else {
+        // Se o texto escondido estiver visível
+        // 5. Esconde o texto
+        textoEscondido.style.display = 'none';
+        
+        // 6. Muda o texto do botão de volta para "Ler Mais"
+        botaoLerMais.textContent = 'Ler Mais';
+    }
+}
+
+// 7. Adiciona o "ouvinte de evento" ao botão "Ler Mais"
+botaoLerMais.addEventListener('click', toggleTexto);
     <!--Seção estudantes é a parte do paragrafo 2 da página-->
 <section class="estudante">
     <h1 class="estudante_titulo">Alunos em destaque 2024</h1>

@@ -182,10 +182,6 @@ header p {
   font-size: 1.2rem;
   font-weight: bold;
 }
-.link{
-    color: #ffffff;
-    text-decoration: none;
-    }
 
 /* ========================================================= */
 /* INÍCIO DO NOVO CÓDIGO CSS (DO "LER MAIS") */
@@ -222,5 +218,23 @@ header p {
 
 .btn-ler-mais:hover {
     background-color: #1e87c0; 
+}/* Por padrão, o texto escondido está invisível */
+#texto-escondido {
+    display: none;
+    /* Certifique-se de que não haja estilos conflitantes aqui */
 }
 
+/* Quando a classe 'visivel' é adicionada, ele aparece */
+#texto-escondido.visivel {
+    display: inline; /* ou 'block' se for um bloco de texto */
+}
+/* Por padrão, o texto escondido está invisível */
+#texto-escondido {
+    display: none;
+    /* Certifique-se de que não haja estilos conflitantes aqui */
+}
+
+/* Quando a classe 'visivel' é adicionada, ele aparece */
+#texto-escondido.visivel {
+    display: inline; /* ou 'block' se for um bloco de texto */
+}

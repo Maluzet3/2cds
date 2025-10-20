@@ -3,7 +3,7 @@ const slides = document.querySelector("#slides");
 const totalSlides = slides.children.length;
 const dotsContainer = document.getElementById("dots");
 
-// Cria as bolinhas dinamicamente//
+// Cria as bolinhas dinamicamente
 for (let i = 0; i < totalSlides; i++) {
   const dot = document.createElement("span");
   dot.classList.add("dot");
@@ -12,7 +12,9 @@ for (let i = 0; i < totalSlides; i++) {
 }
 
 function mostrarSlide(index) {
-  slideIndex = (index + totalSlides) % totalSlides;
+  // CORREÇÃO: Usa a fórmula para módulo positivo
+  slideIndex = (index % totalSlides + totalSlides) % totalSlides; 
+  
   slides.style.transform = `translateX(${-slideIndex * 100}%)`;
   document.querySelectorAll(".dot").forEach((dot, i) => {
     dot.classList.toggle("active", i === slideIndex);
@@ -23,9 +25,8 @@ function mudarSlide(n) {
   mostrarSlide(slideIndex + n);
 }
 
-// Troca automática a cada 5 segundos//
+// Troca automática a cada 5 segundos
 setInterval(() => mudarSlide(1), 5000);
 
-// Inicia no primeiro slide//
+// Inicia no primeiro slide
 mostrarSlide(slideIndex);
-

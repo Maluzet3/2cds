@@ -56,46 +56,7 @@ scale=1.0">
     </section>
     ```
 
-### 2. Adição do JavaScript (No seu `script.js`)
 
-Adicione o código abaixo ao final do seu arquivo **`script.js`**. Se você já tinha o código do menu/destaque, apenas cole este novo bloco abaixo dele.
-
-#### `script.js` (Bloco "Ler Mais Simples")
-
-```javascript
-// =========================================================
-// EXEMPLO 3: LER MAIS SIMPLES
-// =========================================================
-
-// 1. Encontra os três elementos que vamos manipular no HTML
-const botaoLerMais = document.getElementById('btn-ler-mais');
-const textoEscondido = document.getElementById('texto-escondido');
-const textoIntroducao = document.getElementById('texto-introducao'); // O parágrafo completo
-
-// 2. Cria a função que será executada ao clicar no botão
-function toggleTexto() {
-    // Verifica qual é o estado atual do texto escondido
-    
-    // Se o texto escondido estiver oculto (display: none no HTML)
-    if (textoEscondido.style.display === 'none') {
-        // 3. Mostra o texto
-        textoEscondido.style.display = 'inline'; // ou 'block', mas 'inline' fica melhor para texto corrido
-        
-        // 4. Muda o texto do botão para "Ler Menos"
-        botaoLerMais.textContent = 'Ler Menos';
-        
-    } else {
-        // Se o texto escondido estiver visível
-        // 5. Esconde o texto
-        textoEscondido.style.display = 'none';
-        
-        // 6. Muda o texto do botão de volta para "Ler Mais"
-        botaoLerMais.textContent = 'Ler Mais';
-    }
-}
-
-// 7. Adiciona o "ouvinte de evento" ao botão "Ler Mais"
-botaoLerMais.addEventListener('click', toggleTexto);
     <!--Seção estudantes é a parte do paragrafo 2 da página-->
 <section class="estudante">
     <h1 class="estudante_titulo">Alunos em destaque 2024</h1>
@@ -251,5 +212,8 @@ botaoLerMais.addEventListener('click', toggleTexto);
     dados</p>
     <p> </p>
     </footer>
+
+<script type="module" src="script.js"></script>
+
     </body>
     </html>

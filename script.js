@@ -1,29 +1,15 @@
-// =========================================================
-// FUNCIONALIDADE LER MAIS/LER MENOS
-// =========================================================
+// Opção 3: Alternar a cor de fundo do rodapé
 
-// 1. Encontra os elementos que vamos manipular no HTML
-const botaoLerMais = document.getElementById('btn-ler-mais');
-const textoEscondido = document.getElementById('texto-escondido');
+const rodape = document.querySelector('.escola'); // O rodapé usa a classe 'escola'
 
-// 2. Cria a função que será executada ao clicar no botão
-function toggleTexto() {
-    // Se o texto escondido estiver oculto (pelo CSS inline 'display: none;')
-    if (textoEscondido.style.display === 'none') {
-        // Mostra o texto
-        textoEscondido.style.display = 'inline'; 
-        // Muda o texto do botão para "Ler Menos"
-        botaoLerMais.textContent = 'Ler Menos';
+rodape.addEventListener('click', function() {
+    // Se a cor atual for a cor de fundo 1, muda para a cor de fundo 2
+    if (rodape.style.backgroundColor === 'rgb(66, 78, 97)') { // Cor do cabeçalho
+        rodape.style.backgroundColor = '#faae43'; // Amarelo/Laranja
+        console.log("Cor do rodapé alterada para Laranja.");
     } else {
-        // Esconde o texto
-        textoEscondido.style.display = 'none';
-        // Muda o texto do botão de volta para "Ler Mais"
-        botaoLerMais.textContent = 'Ler Mais';
+        // Caso contrário, define uma cor padrão diferente da original (que é um gradiente)
+        rodape.style.backgroundColor = 'rgb(66, 78, 97)'; // Cor do cabeçalho
+        console.log("Cor do rodapé alterada para Cinza/Azul Escuro.");
     }
-}
-
-// 3. Adiciona o "ouvinte de evento" ao botão "Ler Mais"
-botaoLerMais.addEventListener('click', toggleTexto);
-
-// NOTA: O código do carrossel foi removido pois não havia o HTML correspondente
-// e ele não estava relacionado ao seu pedido principal (o "Ler Mais").
+});
